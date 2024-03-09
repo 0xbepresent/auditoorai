@@ -11,7 +11,7 @@ $ python3 setup.py install
 
 ## Configure
 
-Create an `.env` file and set the `OPENAI_API_KEY` and `ACTIVELOOP_TOKEN`.
+Create an `.env` file and set the `OPENAI_API_KEY` and [`ACTIVELOOP_TOKEN`](https://activeloop.ai).
 
 ## Usage
 
