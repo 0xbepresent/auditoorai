@@ -11,9 +11,11 @@ $ python3 setup.py install
 
 ## Configure
 
-Create an `.env` file and set the `OPENAI_API_KEY` and [`ACTIVELOOP_TOKEN`](https://activeloop.ai).
+Create an `.env` file and set the [`OPENAI_API_KEY`](https://openai.com/blog/openai-api) and [`ACTIVELOOP_TOKEN`](https://activeloop.ai).
 
 ## Usage
+
+### Help command
 
 ```bash
 $ aai --help
@@ -30,9 +32,17 @@ Commands:
   prompt  Prompt the code
 ```
 
+### Upload the code to audit to `activePool`
+
 ```bash
-$ aai prompt -ua bepresent -ds project_to_audit
-Deep Lake Dataset in hub://bepresent/rolla already exists, loading from the storage
+$ aai index -ua bepresent -ds pta -sp /tmp/project-to-audit/src/
+```
+
+### Initiate a conversation
+
+```bash
+$ aai prompt -ua bepresent -ds pta
+Deep Lake Dataset in hub://bepresent/pta already exists, loading from the storage
 Starting conversation...
 > qa Explain in me what the code does?
 ```
