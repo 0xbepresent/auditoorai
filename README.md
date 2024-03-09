@@ -19,7 +19,6 @@ Create an `.env` file and set the [`OPENAI_API_KEY`](https://openai.com/blog/ope
 
 ```bash
 $ aai --help
-(.venv) ➜  aai --help
 Usage: aai [OPTIONS] COMMAND [ARGS]...
 
   Audit code using AI
