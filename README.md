@@ -3,6 +3,7 @@
 ## Install
 
 ```bash
+$ git clone git@github.com:0xbepresent/auditoorai.git
 $ python3 -m venv .venv && source .venv/bin/activate
 $ source .env/bin/activate
 $ pip3 install -r requirements
@@ -34,10 +35,39 @@ Commands:
 ### Upload the code to audit to `activePool`
 
 ```bash
+$ aai index --help
+Usage: aai index [OPTIONS]
+
+  Index the data source to an ActivePool Storage
+
+Options:
+  -v, --verbose                   Enables verbose mode
+  -ua, --username-activepool TEXT
+                                  Username ActivePool  [required]
+  -ds, --dataset TEXT             Dataset name in ActivePool
+  -sp, --source-path TEXT         Code source to upload
+  --help                          Show this message and exit.
+```
+
+```bash
 $ aai index -ua bepresent -ds pta -sp /tmp/project-to-audit/src/
 ```
 
 ### Initiate a conversation
+
+```bash
+$ aai prompt --help
+Usage: aai prompt [OPTIONS]
+
+  Open prompt
+
+Options:
+  -v, --verbose                   Enables verbose mode
+  -ua, --username-activepool TEXT
+                                  Username ActivePool  [required]
+  -ds, --dataset TEXT             Dataset name in ActivePool
+  --help                          Show this message and exit.
+```
 
 ```bash
 $ aai prompt -ua bepresent -ds pta
