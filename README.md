@@ -73,5 +73,11 @@ Options:
 $ aai prompt -ua bepresent -ds pta
 Deep Lake Dataset in hub://bepresent/pta already exists, loading from the storage
 Starting conversation...
-> qa Explain in me what the code does?
+> qa in `RedemptionFacet::disputeRedemption` what is the purpose and why someone wants to dispute?
+
+**Answer**: The `disputeRedemption` function in the `RedemptionFacet` contract is designed to allow users to challenge a proposed short redemption that they believe is incorrect or invalid. 
+
+The reason why someone might want to dispute a proposed short is because the system allows DUSD holders to redeem their tokens for an equivalent amount of ETH. Users propose a list of Short Records (SRs) to redeem against, but this list is not automatically sorted from lowest to highest. Therefore, there is a risk that a user could propose an incorrect or unfair list of SRs for redemption.
+
+To protect the system and its users, the `disputeRedemption` function provides a dispute period during which any proposal can be challenged and potentially reverted. If a proposal is found to be incorrect, a penalty is levied against the proposer. This mechanism incentivizes users to propose fair and correct redemptions, and allows the community to police and correct any erroneous proposals. 
 ```
