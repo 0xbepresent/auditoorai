@@ -5,14 +5,17 @@
 ```bash
 $ git clone git@github.com:0xbepresent/auditoorai.git
 $ python3 -m venv .venv && source .venv/bin/activate
-$ source .env/bin/activate
-$ pip3 install -r requirements
+$ pip3 install -r requirements.txt
 $ python3 setup.py install
 ```
 
 ## Configure
 
 Create an `.env` file and set the [`OPENAI_API_KEY`](https://openai.com/blog/openai-api) and [`ACTIVELOOP_TOKEN`](https://activeloop.ai).
+
+```bash
+$ cp .env-example .env
+```
 
 ## Usage
 
