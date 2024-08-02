@@ -28,7 +28,7 @@ class AuditAIPrompt(Cmd):
         return retriever
 
     def do_qa(self, args):
-        model = ChatOpenAI(model_name='gpt-4')  # switch to gpt-3.5-turbo if you want
+        model = ChatOpenAI(model_name='gpt-4o')
         conversation = ConversationalRetrievalChain.from_llm(model, retriever=self.retriever)
         result = conversation({"question": args, "chat_history": self.chat_history})
         self.chat_history.append((args, result['answer']))

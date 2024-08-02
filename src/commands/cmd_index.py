@@ -3,7 +3,7 @@ import os
 import click
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
-from langchain_openai import OpenAIEmbeddings
+from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_community.vectorstores import DeepLake
 
 from src.cli import pass_environment
@@ -32,5 +32,7 @@ def cli(ctx, verbose, username_activepool, dataset, source_path):
 
     text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     texts = text_splitter.split_documents(docs)
-    db = DeepLake(dataset_path=f"hub://{username_activepool}/{dataset}", embedding_function=embeddings)  # dataset would be publicly available
+    db = DeepLake(
+        dataset_path=f"hub://{username_activepool}/{dataset}",
+        embedding_function=embeddings)  # dataset would be publicly available
     db.add_documents(texts)
